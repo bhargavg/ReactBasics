@@ -116,3 +116,16 @@ foo();
 window.bar = "3.14";
 foo();
 ```
+
+# Curious case of `map`
+```Javascript
+// Window context
+[1,2,3].map(function(item){
+  console.log(this)
+})
+
+// Custom context
+[1,2,3].map(function(item){
+  console.log(this)
+}, { foo: "bar" })
+```
